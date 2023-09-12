@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		61791E4F2AAD91AF002250AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61791E4E2AAD91AF002250AB /* AppDelegate.swift */; };
 		61791E512AAD91AF002250AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61791E502AAD91AF002250AB /* SceneDelegate.swift */; };
-		61791E532AAD91AF002250AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61791E522AAD91AF002250AB /* ViewController.swift */; };
+		61791E532AAD91AF002250AB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61791E522AAD91AF002250AB /* CameraViewController.swift */; };
 		61791E562AAD91AF002250AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61791E542AAD91AF002250AB /* Main.storyboard */; };
 		61791E582AAD91B1002250AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61791E572AAD91B1002250AB /* Assets.xcassets */; };
 		61791E5B2AAD91B1002250AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61791E592AAD91B1002250AB /* LaunchScreen.storyboard */; };
+		61791E632AAD975A002250AB /* QRCodeDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61791E622AAD975A002250AB /* QRCodeDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61791E4B2AAD91AF002250AB /* QRScannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61791E4E2AAD91AF002250AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61791E502AAD91AF002250AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61791E522AAD91AF002250AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		61791E522AAD91AF002250AB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		61791E552AAD91AF002250AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61791E572AAD91B1002250AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61791E5A2AAD91B1002250AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61791E5C2AAD91B1002250AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61791E622AAD975A002250AB /* QRCodeDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				61791E4E2AAD91AF002250AB /* AppDelegate.swift */,
 				61791E502AAD91AF002250AB /* SceneDelegate.swift */,
-				61791E522AAD91AF002250AB /* ViewController.swift */,
+				61791E522AAD91AF002250AB /* CameraViewController.swift */,
+				61791E622AAD975A002250AB /* QRCodeDisplayViewController.swift */,
 				61791E542AAD91AF002250AB /* Main.storyboard */,
 				61791E572AAD91B1002250AB /* Assets.xcassets */,
 				61791E592AAD91B1002250AB /* LaunchScreen.storyboard */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61791E532AAD91AF002250AB /* ViewController.swift in Sources */,
+				61791E532AAD91AF002250AB /* CameraViewController.swift in Sources */,
+				61791E632AAD975A002250AB /* QRCodeDisplayViewController.swift in Sources */,
 				61791E4F2AAD91AF002250AB /* AppDelegate.swift in Sources */,
 				61791E512AAD91AF002250AB /* SceneDelegate.swift in Sources */,
 			);
@@ -292,8 +296,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,8 +324,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

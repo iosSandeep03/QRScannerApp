@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOz-oq-dry">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--QR Scanner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" title="QR Scanner" id="BYZ-38-t0r" customClass="CameraViewController" customModule="QRScannerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shM-e5-uSK">
+                                <rect key="frame" x="91.333333333333329" y="498.33333333333331" width="210.33333333333337" height="55.666666666666686"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Scan Code">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="ScanCodeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BA4-pa-MtZ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-7J-O56">
+                                <rect key="frame" x="76.666666666666686" y="152" width="240" height="240"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4kS-Nh-UWR"/>
+                                    <constraint firstAttribute="height" constant="240" id="zX7-qM-Acn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="shM-e5-uSK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ys-2s-XaU"/>
+                            <constraint firstItem="shM-e5-uSK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="Aui-4o-SyU"/>
+                            <constraint firstItem="x1t-7J-O56" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TSy-6r-i8J"/>
+                            <constraint firstItem="shM-e5-uSK" firstAttribute="top" secondItem="x1t-7J-O56" secondAttribute="bottom" constant="106.33" id="wkf-fx-Aaq"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="QR Scanner" id="blr-uO-7Eg"/>
+                    <connections>
+                        <outlet property="QrScanView" destination="x1t-7J-O56" id="4Na-3D-j6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="840.45801526717548" y="-2.1126760563380285"/>
+        </scene>
+        <!--Code Display View Controller-->
+        <scene sceneID="5eR-t0-OFR">
+            <objects>
+                <viewController storyboardIdentifier="QRCodeDisplayViewController" id="U4O-hn-2Vl" customClass="QRCodeDisplayViewController" customModule="QRScannerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bLN-jX-PGf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaL-nY-f9D">
+                                <rect key="frame" x="150.66666666666666" y="502.66666666666669" width="91.666666666666657" height="46.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JM3-ua-Zli">
+                                <rect key="frame" x="76" y="183" width="240" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Wg-CN-1rS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JM3-ua-Zli" firstAttribute="centerX" secondItem="bLN-jX-PGf" secondAttribute="centerX" id="FnU-1R-1e0"/>
+                            <constraint firstItem="VaL-nY-f9D" firstAttribute="centerY" secondItem="bLN-jX-PGf" secondAttribute="centerY" constant="100" id="XTb-2i-w6c"/>
+                            <constraint firstItem="JM3-ua-Zli" firstAttribute="centerY" secondItem="bLN-jX-PGf" secondAttribute="centerY" id="s74-M5-Ycn"/>
+                            <constraint firstItem="VaL-nY-f9D" firstAttribute="top" secondItem="JM3-ua-Zli" secondAttribute="bottom" constant="79.670000000000002" id="suY-de-IY2"/>
+                            <constraint firstItem="VaL-nY-f9D" firstAttribute="centerX" secondItem="bLN-jX-PGf" secondAttribute="centerX" id="wLI-wo-NXI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputLbl" destination="VaL-nY-f9D" id="GVg-iL-QKe"/>
+                        <outlet property="qrCodeImageView" destination="JM3-ua-Zli" id="56g-N8-X41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XNW-gB-3Zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544.2748091603053" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="roz-VH-1Oc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eOz-oq-dry" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="31E-Qa-hSs">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uz3-6v-AZl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J93-3b-xKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.25954198473282" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
